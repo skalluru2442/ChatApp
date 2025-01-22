@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+:root {
+    body {
+        margin: 0;
+    }
+}
+
+.vertical_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .form_div {
+        padding: 16px;
+        border-radius: 5px;
+        background: lightgrey;
+        width: 218px;
+
+        h2 {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+        }
+
+        form {
+
+            input,
+            button {
+                height: 30px;
+                border: none;
+                border-radius: 3px;
+                margin-bottom: 8px;
+                width: 100%;
+            }
+
+            input {
+                padding-left: 8px;
+                width: calc(100% - 8px);
+            }
+
+            button {
+                background: #025e4a;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 18px;
+                color: white;
+                height: 36px;
+            }
+
+            button:disabled {
+                background: #969e9c;
+                color: grey;
+            }
+
+            .error_msg {
+                color: red;
+                font-size: 13px;
+                margin: 4px 0;
+            }
+        }
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+}

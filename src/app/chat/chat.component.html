@@ -1,0 +1,22 @@
+<div *ngIf="selectedUserEmail" class="main_content">
+    <div class="chat_header">
+        <p>Chatting with: <strong>{{selectedUserEmail }}</strong></p>
+    </div>
+    <div class="chat_content"  #chatContent>
+        <div class="chat_div" *ngFor="let message of messages; let i=index">
+            <div
+                [ngClass]="{'my-message': message.sender === loggedInUserId, 'other-message': message.sender !== loggedInUserId}">
+                <p>
+                    {{ message.text }} <br>
+                    <b>{{date_times[i]}}</b>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footer_div">
+        <input [(ngModel)]="newMessage" placeholder="Type a message">
+        <button (click)="sendMessage()">
+            <img src="../../assets/send.png" alt="send">
+        </button>
+    </div>
+</div>

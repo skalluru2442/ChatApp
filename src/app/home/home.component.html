@@ -1,0 +1,16 @@
+<div class="main_content">
+    <div class="users_content">
+        <h2>Available Users</h2>
+        <div *ngIf="users.length; else emptyCart">
+            <div class="user_list_div" *ngFor="let user of users" (click)="startChat(user.id, user.email)">
+                <p>{{ user.email }}</p>
+            </div>
+        </div>
+        <ng-template #emptyCart>
+            <p>There are no users available!</p>
+        </ng-template>
+    </div>
+    <div class="chat_content">
+        <app-chat [userId]="selectedUserId" [userEmail]="selectedEmailId"></app-chat>
+    </div>
+</div>

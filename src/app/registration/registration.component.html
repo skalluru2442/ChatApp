@@ -1,0 +1,12 @@
+<div class="vertical_center">
+    <div class="form_div">
+        <h2>Register</h2>
+        <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+            <input type="email" [(ngModel)]="email" name="email" required placeholder="Email"> <br>
+            <input type="password" [(ngModel)]="password" name="password" required placeholder="Password"> <br>
+            <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required placeholder="Confirm Password"> <br>
+            <p class="error_msg" *ngIf="errorMessage">{{ errorMessage }}</p>
+            <button type="submit" [disabled]="!registrationForm.form.valid">Register</button>
+        </form>
+    </div>
+</div>

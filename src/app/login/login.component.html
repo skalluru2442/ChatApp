@@ -1,0 +1,11 @@
+<div class="vertical_center">
+    <div class="form_div">
+        <h2>Login</h2>
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+            <input type="email" [(ngModel)]="email" name="email" required placeholder="Email"> <br>
+            <input type="password" [(ngModel)]="password" name="password" required placeholder="Password"> <br>
+            <p class="error_msg" *ngIf="errorMessage">{{ errorMessage }}</p>
+            <button [disabled]="!loginForm.form.valid" type="submit">Login</button>
+        </form>
+    </div>
+</div>
